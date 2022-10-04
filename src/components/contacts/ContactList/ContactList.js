@@ -9,8 +9,8 @@ let ContactList = () => {
             <div className="grid">
               <div className="row">
                 <div className="col">
-                    <p className="h3">Contact Manager
-                      <Link to={'/contacts/add'} className='btn btn-primary ms-2'>
+                    <p className="h3 fw-bold">Contact Manager
+                      <Link to={'/contacts/add'} className='btn btn-success ms-2'>
                         <i className="fa fa-plus-circle me-2"/>
                         New</Link>
                     </p>
@@ -64,7 +64,7 @@ let ContactList = () => {
                         <Link to= {'/contacts/view/:contactId/'}className="btn btn-warning my-1">
                           <i className="fa fa-eye"/>
                         </Link>
-                        <Link to= {'/contacts/edit/:contactId/'}className="btn btn-primary my-1">
+                        <Link to= {'/contacts/edit/:contactId/'}className="btn btn-success my-1">
                           <i className="fa fa-pen"/>
                         </Link>
                         <button className="btn btn-danger my-1">
