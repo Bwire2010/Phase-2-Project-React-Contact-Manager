@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import {Link} from 'react-router-dom';
 import {ContactService} from '../../../Services/ContactService';
+import Spinner from "../../Spinner/Spinner";
 
 let ContactList = () => {
 
@@ -35,7 +36,6 @@ let ContactList = () => {
 
   return (
     <React.Fragment>
-      <pre>{JSON.stringify(contacts)}</pre>
       <section className="contact-search p-3">
         <div className="container">
             <div className="grid">
@@ -69,47 +69,61 @@ let ContactList = () => {
         </div>
       </section>
 
+      {
+          loading ? <Spinner /> : <React.Fragment>
       <section className="contact-list">
         <div className="container">
             <div className="row">
-              <div className="col-md-6">
-                <div className="card">
-                  <div className="card-body">
-                    <div className="row align-items-center d-flex justify-content-around">
-                      <div className="col-md-4">
-                        <img src="https://cdn-icons-png.flaticon.com/512/747/747376.png" alt="" className="contact-img"/>
+              {
+                contacts.length > 0 &&
+                contacts.map(contact => {
+                  return(
+                  <div className="col-md-6" key={contact.id}>
+                    <div className="card my-2">
+                      <div className="card-body">
+                        <div className="row align-items-center d-flex justify-content-around">
+                          <div className="col-md-4">
+                            <img src={contact.photo} alt="" className="contact-img"/>
+                          </div>
+                          <div className="col-md-7">
+                            <ul className="list-group">
+                              <li className="list-group-item list-group-item-action">
+                                Name : <span className="fw-bold">{contact.name}</span>
+                              </li>
+                              <li className="list-group-item list-group-item-action">
+                                Mobile : <span className="fw-bold">{contact.mobile}</span>
+                              </li>
+                              <li className="list-group-item list-group-item-action">
+                                Email : <span className="fw-bold">{contact.email}</span>
+                              </li>
+                            </ul>
+                          </div>
+                          <div className="col-md-1 d-flex flex-column align-items-center">
+                            <Link to= {'/contacts/view/:contactId/'}className="btn btn-warning my-1">
+                              <i className="fa fa-eye"/>
+                            </Link>
+                            <Link to= {'/contacts/edit/:contactId/'}className="btn btn-success my-1">
+                              <i className="fa fa-pen"/>
+                            </Link>
+                            <button className="btn btn-danger my-1">
+                              <i className="fa fa-trash"/>
+                            </button>
+                          </div>
+                        </div>         
                       </div>
-                      <div className="col-md-7">
-                        <ul className="list-group">
-                          <li className="list-group-item list-group-item-action">
-                            Name : <span className="fw-bold">Patrobas Bwire</span>
-                          </li>
-                          <li className="list-group-item list-group-item-action">
-                            Mobile : <span className="fw-bold">0712290167</span>
-                          </li>
-                          <li className="list-group-item list-group-item-action">
-                            Email : <span className="fw-bold">patrobasbwire@gmail.com</span>
-                          </li>
-                        </ul>
-                      </div>
-                      <div className="col-md-1 d-flex flex-column align-items-center">
-                        <Link to= {'/contacts/view/:contactId/'}className="btn btn-warning my-1">
-                          <i className="fa fa-eye"/>
-                        </Link>
-                        <Link to= {'/contacts/edit/:contactId/'}className="btn btn-success my-1">
-                          <i className="fa fa-pen"/>
-                        </Link>
-                        <button className="btn btn-danger my-1">
-                          <i className="fa fa-trash"/>
-                        </button>
-                      </div>
-                    </div>         
+                    </div>
                   </div>
-                </div>
-              </div>
+                  )
+                })
+              }
+             
             </div>
         </div>
       </section>
+            </React.Fragment>
+      }
+
+   
     </React.Fragment>
   );
 };
