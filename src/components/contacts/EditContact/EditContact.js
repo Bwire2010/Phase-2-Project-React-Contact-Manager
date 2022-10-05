@@ -12,7 +12,7 @@ let EditContact = () => {
              < p className='fst-italic'> Enter the contact’s name, email, and phone number.</p>
            </div>
          </div>
-         <div className='row'>
+         <div className='row align-items-center'>
            <div className='col-md-4'>
              <form>
                <div className='mb-2'>
@@ -42,7 +42,11 @@ let EditContact = () => {
                  <input  type='submit' className='btn btn-success' value='Update'/>
                  <Link to={'/contacts/list'} className='btn btn-danger ms-2'>Cancel</Link>
                </div>
+
              </form>
+           </div>
+           <div className='col-md-6'>
+            <img src='https://cdn-icons-png.flaticon.com/512/747/747376.png' alt='' className='img-fluid contact-img'/>
            </div>
          </div>
        </div>
