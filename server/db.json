@@ -3,7 +3,7 @@
         {
             "id" : "ABC",
             "name" : "Patrobas Bwire",
-            "photo" : "https://cdn-icons-png.flaticon.com/512/747/747376.png",
+            "photo" : "https://cdn-icons-png.flaticon.com/512/428/428933.png",
             "mobile" : "0712290167",
             "email" : "patrobasbwire@gmail.com",
             "title" : "Software Engineer",
@@ -23,7 +23,7 @@
         {
             "id" : "CDE",
             "name" : "Geoffrey Kigen",
-            "photo" : "https://cdn-icons-png.flaticon.com/512/747/747376.png",
+            "photo" : "https://cdn-icons-png.flaticon.com/512/219/219970.png",
             "mobile" : "0725988776",
             "email" : "geokigen@gmail.com",
             "title" : "Administrator",

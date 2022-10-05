@@ -1,7 +1,42 @@
-import React from 'react';
-import {Link} from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import {Link, useParams} from 'react-router-dom';
+import { ContactService } from '../../../Services/ContactService';
+import Spinner from '../../Spinner/Spinner';
 
 let ViewContact = () => {
+
+  let {contactId} = useParams();
+
+  let [state, setState] = useState({
+    loading: false,
+    contact: {},
+    errorMessage: ''
+  });
+
+  useEffect (() => {
+    (async function () {
+      try{
+        setState({...state, loading: true});
+        let response = await ContactService.getContact(contactId);
+        setState({
+              ...state,
+              loading: false,
+              contact: response.data
+        });
+      }
+      catch (error) {
+          setState({
+            ...state,
+            loading: false,
+            errorMessage: error.message
+          });
+      }
+    })();
+  }, [contactId]);
+
+  let {loading ,contact , errorMessage} = state;
+
+
     return (
         <React.Fragment>
           <section className='view-contact-intro p-3'>
@@ -14,31 +49,35 @@ let ViewContact = () => {
               </div>
             </div>
           </section>
+          {
+            loading ? <Spinner /> : <React.Fragment>
+              {
+                Object.keys(contact).length > 0 &&
           <section className='view-contact mt-3'>
             <div className='container'>
               <div className='row align-items-center'>
                 <div className='col-md-4'>
-                <img src='https://cdn-icons-png.flaticon.com/512/747/747376.png' alt='' className='contact-img'/>
+                 <img src={contact.photo} alt='' className='contact-img'/>
                 </div>
                 <div className='col-md-8'>
                   <ul className="list-group">
                     <li className="list-group-item list-group-item-action">
-                      Name : <span className="fw-bold">Patrobas Bwire</span>
+                      Name : <span className="fw-bold">{contact.name}</span>
                     </li>
                     <li className="list-group-item list-group-item-action">
-                      Mobile : <span className="fw-bold">0712290167</span>
+                      Mobile : <span className="fw-bold">{contact.mobile}</span>
                     </li>
                     <li className="list-group-item list-group-item-action">
-                      Email : <span className="fw-bold">patrobasbwire@gmail.com</span>
+                      Email : <span className="fw-bold">{contact.email}</span>
                     </li>
                     <li className="list-group-item list-group-item-action">
-                      Company : <span className="fw-bold">Fiverr</span>
+                      Company : <span className="fw-bold">{contact.company}</span>
                     </li>
                     <li className="list-group-item list-group-item-action">
-                      Title : <span className="fw-bold">Software Engineer</span>
+                      Title : <span className="fw-bold">{contact.title}</span>
                     </li>
                     <li className="list-group-item list-group-item-action">
-                      Group : <span className="fw-bold">Junior</span>
+                      Group : <span className="fw-bold">{contact.groupId}</span>
                     </li>
                   </ul>
                 </div>
@@ -50,6 +89,9 @@ let ViewContact = () => {
               </div>
             </div>
           </section>
+}
+              </React.Fragment>
+          }
         </React.Fragment>
     )
 };
