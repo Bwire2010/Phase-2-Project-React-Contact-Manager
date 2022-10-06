@@ -1,8 +1,10 @@
 import React, { useState , useEffect} from 'react';
-import {Link} from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
 import {ContactService} from '../../../Services/ContactService';
 
 let AddContact = () => {
+
+  let navigate = useNavigate();
 
   let [state, setState] = useState({
     loading: false,
@@ -50,6 +52,21 @@ let AddContact = () => {
     })();
   }, []);
 
+  let submitForm = async (event) => {
+    event.preventDefault();
+    try {
+      let response = await ContactService.createContact(state.contact);
+      console.log(response.data)
+      if (response){
+        navigate('/contacts/list', {replace: true});
+      }
+    } 
+    catch (error) {
+      setState ({...state, errorMessage: error.message});
+      navigate('/contacts/add', {replace: false});
+    }
+  };
+
  let{loading, contact, groups , errorMessage} = state;
 
     return (
@@ -64,7 +81,7 @@ let AddContact = () => {
               </div>
               <div className='row'>
                 <div className='col-md-4'>
-                  <form>
+                  <form onSubmit= {submitForm}>
                     <div className='mb-2'>
                       <input  
                         required={true}
