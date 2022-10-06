@@ -5,9 +5,14 @@ import Spinner from "../../Spinner/Spinner";
 
 let ContactList = () => {
 
+  let [query, setQuery] = useState ({
+    text: ''
+  });
+
   let [state, setState] =useState({
     loading : false,
     contacts : [],
+    filteredContacts:[],
     errorMessage : ''
   });
 
@@ -19,7 +24,8 @@ let ContactList = () => {
         setState({
               ...state,
               loading: false,
-              contacts: response.data
+              contacts: response.data,
+              filteredContacts: response.data
         });
       }
       catch (error) {
@@ -42,7 +48,8 @@ let ContactList = () => {
           setState({
                 ...state,
                 loading: false,
-                contacts: response.data
+                contacts: response.data,
+                filteredContacts:response.data
           });
       }
     }
@@ -55,7 +62,20 @@ let ContactList = () => {
     }
   };
 
-  let {loading ,contacts , errorMessage} = state;
+  //search contacts
+  let searchContacts = (event) => {
+    setQuery({...query, text : event.target.value });
+    let theContacts = state.contacts.filter (contact => {
+      return contact.name.toLowerCase().includes(event.target.value.toLowerCase())
+    })
+    setState({
+      ...state,
+      filteredContacts:theContacts
+    });
+  };
+  
+
+  let {loading ,contacts , filteredContacts , errorMessage} = state;
 
   return (
     <React.Fragment>
@@ -77,7 +97,11 @@ let ContactList = () => {
                   <form className="row">
                     <div className="col">
                         <div className="mb-2">
-                            <input type="text" className="form-control" placeholder="Search Names"/>
+                            <input 
+                              name='text'
+                              value={query.text}
+                              onChange={searchContacts}
+                              type="text" className="form-control" placeholder="Search Names"/>
                         </div>
                     </div>
                     <div className="col">
@@ -98,8 +122,8 @@ let ContactList = () => {
         <div className="container">
             <div className="row">
               {
-                contacts.length > 0 &&
-                contacts.map(contact => {
+                filteredContacts.length > 0 &&
+                filteredContacts.map(contact => {
                   return(
                   <div className="col-md-6" key={contact.id}>
                     <div className="card my-2">
