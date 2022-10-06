@@ -22,7 +22,7 @@
     },
     {
       "id": "CDE",
-      "name": "Geoffrey Kigen",
+      "name": "Geoffrey Kigen kipkemboi",
       "photo": "https://cdn-icons-png.flaticon.com/512/219/219970.png",
       "mobile": "0725988776",
       "email": "geokigen@gmail.com",
@@ -42,13 +42,23 @@
     },
     {
       "name": "Samson Kwendo",
-      "photo": "https://cdn-icons-png.flaticon.com/512/747/747376.png",
+      "photo": "https://cdn-icons-png.flaticon.com/512/2202/2202112.png",
       "mobile": "0712290888",
       "email": "kwendosamson@gmail.com",
       "company": "Safaricom",
       "title": "DevOPs",
       "groupId": "4",
       "id": "OWIZQAt"
+    },
+    {
+      "name": "Kenneth Kandie",
+      "photo": "https://cdn-icons-png.flaticon.com/512/206/206853.png",
+      "mobile": "0717280571",
+      "email": "kennethKandie@gmail.com",
+      "company": "Eldotec",
+      "title": "Team Leader",
+      "groupId": "2",
+      "id": "1vAjc5L"
     }
   ],
   "groups": [
