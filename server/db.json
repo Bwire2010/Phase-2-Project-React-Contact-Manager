@@ -28,7 +28,7 @@
       "email": "geokigen@gmail.com",
       "title": "Administrator",
       "company": "Moi University",
-      "groupId": "4"
+      "groupId": "6"
     },
     {
       "id": "EFG",
@@ -38,7 +38,7 @@
       "email": "nelimabecky@gmail.com",
       "title": "Manager",
       "company": "Becky Beauty Parlor",
-      "groupId": "6"
+      "groupId": "3"
     },
     {
       "name": "Samson Kwendo",
@@ -51,12 +51,12 @@
       "id": "OWIZQAt"
     },
     {
-      "name": "Kenneth",
-      "photo": "https://cdn-icons-png.flaticon.com/512/747/747376.png",
+      "name": "Kenneth Kandie",
+      "photo": "https://cdn-icons-png.flaticon.com/512/219/219970.png",
       "mobile": "0707580281",
       "email": "kennethKandie@gmail.com",
       "company": "Eldotec",
-      "title": "Supervisor",
+      "title": "Team Leader",
       "groupId": "2",
       "id": "rYARGLm"
     }
