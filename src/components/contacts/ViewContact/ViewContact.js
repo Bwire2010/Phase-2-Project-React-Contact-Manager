@@ -10,7 +10,8 @@ let ViewContact = () => {
   let [state, setState] = useState({
     loading: false,
     contact: {},
-    errorMessage: ''
+    errorMessage: '',
+    group : {}
   });
 
   useEffect (() => {
@@ -18,10 +19,12 @@ let ViewContact = () => {
       try{
         setState({...state, loading: true});
         let response = await ContactService.getContact(contactId);
+        let groupResponse =await ContactService.getGroup(response.data)
         setState({
               ...state,
               loading: false,
-              contact: response.data
+              contact: response.data,
+              group: groupResponse.data
         });
       }
       catch (error) {
@@ -34,7 +37,7 @@ let ViewContact = () => {
     })();
   }, [contactId]);
 
-  let {loading ,contact , errorMessage} = state;
+  let {loading ,contact , errorMessage , group} = state;
 
 
     return (
@@ -52,7 +55,7 @@ let ViewContact = () => {
           {
             loading ? <Spinner /> : <React.Fragment>
               {
-                Object.keys(contact).length > 0 &&
+                Object.keys(contact).length > 0 && Object.keys(group).length > 0 &&
           <section className='view-contact mt-3'>
             <div className='container'>
               <div className='row align-items-center'>
@@ -77,7 +80,7 @@ let ViewContact = () => {
                       Title : <span className="fw-bold">{contact.title}</span>
                     </li>
                     <li className="list-group-item list-group-item-action">
-                      Group : <span className="fw-bold">{contact.groupId}</span>
+                      Group : <span className="fw-bold">{group.name}</span>
                     </li>
                   </ul>
                 </div>
