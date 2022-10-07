@@ -84,7 +84,7 @@ let ContactList = () => {
             <div className="grid">
               <div className="row">
                 <div className="col">
-                    <p className="h3 fw-bold">Contact Manager
+                    <p className="h3 fw-bold">Phone Directory
                       <Link to={'/contacts/add'} className='btn btn-success ms-2'>
                         <i className="fa fa-plus-circle me-2"/>
                         New</Link>
