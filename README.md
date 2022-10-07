@@ -1,70 +1,31 @@
-# Getting Started with Create React App
+# Project's Title
+Contact-Manager-App (Phone Directory)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# App features
+Add, delete, update and search a contact options.
 
-## Available Scripts
+# Project Description
+1. The contact-manager-app is an application that enables users to easily store, add, delete, update and search contact details such as names, email addresses, and telephone numbers. It is simple like  phone directories that are available in most smartphones. 
+2. The app  gives the user the option to add a person contact details (Name, Email, Photo URL, Mobile number, company, group and Title) and store them. The users only needs to click the add New button that is beside the phone directory which will direct him/her to the page where one can fill the required information.
+3.  It also has search feature where a user can search easily for the  information of a specific person he or she is looking for. 
+4. It also allow a to user to  update the contacts details of a person.  By clicking on the button with the pen-Icon, a user accesses the page where he/she can change and update a contact details. 
+5. A user can also view a specific person all details by clicking the yellow button with an eye Icon.
+6.  Also, it has the delete option whereby the user click the red button with Trash icon and a person contact details is deleted on the app UI and also in the server. 
+ 
+# Technology Used
+This app is created using  React Js for the front end. For the backend I  created json server which was deployed using Heroku where the backend data(contact details) are stored. 
 
-In the project directory, you can run:
+# Project live link
+Backend link: https://contact-manager-directory.herokuapp.com/ Frontend Link: https://frolicking-eclair-b0a26b.netlify.app/contacts/list 
 
-### `npm start`
+# MIT License
+Copyright (c) [2022] [Patrobas Bwire Onyura]
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
-### `npm test`
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Author
+Patrobas Bwire Onyura# 
