@@ -86,7 +86,7 @@ let EditContact = () => {
          <div className='row'>
            <div className='col'>
              <p className='h4 text-success fw-bold'> Edit Contact</p>
-             < p className='fst-italic'> Enter the contact name, email, and phone number.</p>
+             < p className='fst-italic'> Enter the contact name, email, photo URL, company, title, phone number and group then click update.</p>
            </div>
          </div>
          <div className='row align-items-center'>

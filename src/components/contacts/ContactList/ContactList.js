@@ -89,7 +89,7 @@ let ContactList = () => {
                         <i className="fa fa-plus-circle me-2"/>
                         New</Link>
                     </p>
-                    <p className='fst-italic'> In the search bar, enter the contact name, initials, phone number, or email address. The results will be displayed below. You can also enter multiple keywords for your search, such as "John London", and the system will quickly find all matching contacts. </p>
+                    <p className='fst-italic'> In the search bar, enter the contact name or initials. The results will be displayed below. You can also enter multiple keywords for your search and the system will quickly find all matching contacts. </p>
                 </div>
               </div>
               <div className="row">
